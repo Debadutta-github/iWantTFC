@@ -22,7 +22,7 @@ public class ExcelUtility {
 	 */
 	
 	public String getStringDataFromExcel(String sheetName,int rowIndex,int colIndex) throws EncryptedDocumentException, IOException {
-		FileInputStream fis = new FileInputStream("./src/test/resources/TestData/TestScriptData.xlsx");
+		FileInputStream fis = new FileInputStream("./src/test/resources/testdata/iWantTFC.xlsx");
 		Workbook workbook = WorkbookFactory.create(fis);
 		return workbook.getSheet(sheetName).getRow(rowIndex).getCell(colIndex).getStringCellValue();
 		

@@ -13,7 +13,7 @@ public class FileUtility {
 	 * @throws IOException 
 	 */
 	public String getDataFromProperty(String Key) throws IOException {
-		FileInputStream fis = new FileInputStream(".src/main/resources/commonData.properties");
+		FileInputStream fis = new FileInputStream("./src/main/resources/testdata/commonData.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
 		return prop.getProperty(Key);

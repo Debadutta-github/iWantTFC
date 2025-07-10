@@ -5,11 +5,13 @@
     <classes>
       <class name="test.TC_001">
         <methods>
+          <include name="setupPages"/>
           <include name="reportBackup"/>
           <include name="reportConfig"/>
-          <include name="login"/>
+          <include name="performLogout"/>
           <include name="closeBrowser"/>
           <include name="launchBrowser"/>
+          <include name="play"/>
         </methods>
       </class> <!-- test.TC_001 -->
     </classes>

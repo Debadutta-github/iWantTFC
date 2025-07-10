@@ -1,7 +1,9 @@
 package objectRepo;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
@@ -30,7 +32,7 @@ public class LoginPage {
 	private WebElement createAccount;
 	
 	@FindBy(linkText = "Forgot Password?")
-	private WebElement forgaotPassword;
+	private WebElement forgotPassword;
 	
 	public WebElement getConfirmCookie() {
 		return confirmCookie;
@@ -53,7 +55,7 @@ public class LoginPage {
 	}
 
 	public WebElement getForgaotPassword() {
-		return forgaotPassword;
+		return forgotPassword;
 	}
 
 	public WebElement getEmailAddTextField() {
@@ -66,6 +68,10 @@ public class LoginPage {
 
 	public WebElement getContinueButton() {
 		return continueButton;
+	}
+	
+	public LoginPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
 	}
 	
 	

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="iWantTFC Automation Suite">
+    <parameter name="Browser" value="chrome"/>
+    <test name="Login Tests">
+        <classes>
+            <class name="test.TC_001"/> <!-- Your test class -->
+        </classes>
+    </test>
+</suite>

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,6 +17,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import objectRepo.AccountSettings;
 import objectRepo.HomePage;
 import objectRepo.LoginPage;
+import objectRepo.PlayerControls;
 
 public class BaseClass {
 
@@ -27,17 +29,41 @@ public class BaseClass {
     public JavaUtility jUtil = new JavaUtility();
     public WebDriverUtility wUtil = new WebDriverUtility();
     public FileUtility fUtil = new FileUtility();
-
+    public ExcelUtility eUtil = new ExcelUtility();
+    
+    public AccountSettings as;
     public HomePage hp;
     public LoginPage lp;
     public AccountSettings ap;
+    public PlayerControls pc;
+    
+    public String tray;
+    public String show;
+    public WebElement dynamicShowElement;
+    public String showElement;
+    
+    public void initShowElement() throws Exception {
+        tray = eUtil.getStringDataFromExcel("Shows", 1, 0);
+        show = eUtil.getStringDataFromExcel("Shows", 1, 1);
+        hp = new HomePage(driver); // You don’t need to pass tray/show unless reused
+        dynamicShowElement = hp.getShowElementBy(tray, show);
+    }
+    
+    public void showElementXpath() throws Exception {
+        tray = eUtil.getStringDataFromExcel("Shows", 1, 0);
+        show = eUtil.getStringDataFromExcel("Shows", 1, 1);
+        hp = new HomePage(driver); // You don’t need to pass tray/show unless reused
+        showElement = hp.getShow(tray, show);
+    }
+
 
     @BeforeSuite
     public void reportConfig() {
         System.out.println("Initializing ExtentReports...");
         ExtentSparkReporter spark = new ExtentSparkReporter("./HTML_reports/ExtentReport_" + jUtil.getSystemTime());
         extReport = new ExtentReports();
-        extReport.attachReporter(spark);
+        extReport.attachReporter(spark);	
+        extReport.setSystemInfo("Tester", "Debadutta");
     }
 
     @Parameters("Browser")

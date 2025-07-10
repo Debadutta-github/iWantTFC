@@ -1,13 +1,18 @@
 package genericUtility;
 
+import java.time.Duration;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverUtility {
 
@@ -87,6 +92,16 @@ public class WebDriverUtility {
 	public void dragAndDrop(WebDriver driver, WebElement srcElement, WebElement tarElement) {
 		Actions act3 = new Actions(driver);
 		act3.dragAndDrop(srcElement, tarElement);		
+	}
+	
+	/**
+	 * This method is used to move till the element
+	 * @param driver
+	 * @param element
+	 */
+	public void moveToElement(WebDriver driver, WebElement element) {
+		Actions act4 = new Actions(driver);
+		act4.moveToElement(element).perform();
 	}
 	
 	/**
@@ -195,9 +210,30 @@ public class WebDriverUtility {
 		driver.switchTo().alert().sendKeys(data);
 	}
 	
-	public void jsScroll(WebDriver driver, int x, int y) {
+	/**
+	 * This method is used till the element is clickable
+	 * @param driver
+	 * @param element
+	 * @param time
+	 */
+	public void waitUntillElementClickable(WebDriver driver, WebElement element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public void scrollTillElementByAxis(WebDriver driver, int x, int y) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
 	}
+	
+
+	public void scrollTillElementByXpath(WebDriver driver, String xpath) {
+	    WebElement element = driver.findElement(By.xpath(xpath));
+	    scrollToElement(driver, element);
+	}
+    
+    public void scrollToElement(WebDriver driver, WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 }
 
