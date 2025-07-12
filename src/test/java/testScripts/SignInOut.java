@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 
 import genericUtility.BaseClass;
 import objectRepo.AccountSettings;
+import objectRepo.ContentDeatilsScreen;
 import objectRepo.HomePage;
 import objectRepo.LoginPage;
 import objectRepo.PlayerControls;
@@ -22,6 +23,7 @@ public class SignInOut extends BaseClass {
         as = new AccountSettings(driver);
         lp = new LoginPage(driver);
         pc = new PlayerControls(driver);
+        cds = new ContentDeatilsScreen(driver);
     }
 
     public void performLogin() throws EncryptedDocumentException, IOException {

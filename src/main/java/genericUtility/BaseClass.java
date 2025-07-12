@@ -15,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import objectRepo.AccountSettings;
+import objectRepo.ContentDeatilsScreen;
 import objectRepo.HomePage;
 import objectRepo.LoginPage;
 import objectRepo.PlayerControls;
@@ -36,22 +37,25 @@ public class BaseClass {
     public LoginPage lp;
     public AccountSettings ap;
     public PlayerControls pc;
+    public ContentDeatilsScreen cds;
     
     public String tray;
     public String show;
     public WebElement dynamicShowElement;
     public String showElement;
     
+    public int row = 4;
+    
     public void initShowElement() throws Exception {
-        tray = eUtil.getStringDataFromExcel("Shows", 1, 0);
-        show = eUtil.getStringDataFromExcel("Shows", 1, 1);
+        tray = eUtil.getStringDataFromExcel("Shows", row, 0);
+        show = eUtil.getStringDataFromExcel("Shows", row, 1);
         hp = new HomePage(driver); // You don’t need to pass tray/show unless reused
         dynamicShowElement = hp.getShowElementBy(tray, show);
     }
     
     public void showElementXpath() throws Exception {
-        tray = eUtil.getStringDataFromExcel("Shows", 1, 0);
-        show = eUtil.getStringDataFromExcel("Shows", 1, 1);
+        tray = eUtil.getStringDataFromExcel("Shows", row, 0);
+        show = eUtil.getStringDataFromExcel("Shows", row, 1);
         hp = new HomePage(driver); // You don’t need to pass tray/show unless reused
         showElement = hp.getShow(tray, show);
     }
@@ -63,7 +67,7 @@ public class BaseClass {
         ExtentSparkReporter spark = new ExtentSparkReporter("./HTML_reports/ExtentReport_" + jUtil.getSystemTime());
         extReport = new ExtentReports();
         extReport.attachReporter(spark);	
-        extReport.setSystemInfo("Tester", "Debadutta");
+        test = extReport.createTest("Premium User Play Test");  
     }
 
     @Parameters("Browser")

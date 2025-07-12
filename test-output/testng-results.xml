@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-10T14:58:38 IST" name="Default suite" finished-at="2025-07-10T14:59:34 IST" duration-ms="56441">
+  <suite started-at="2025-07-11T17:56:16 IST" name="Default suite" finished-at="2025-07-11T17:57:59 IST" duration-ms="102884">
     <groups>
     </groups>
-    <test started-at="2025-07-10T14:58:38 IST" name="Default test" finished-at="2025-07-10T14:59:34 IST" duration-ms="56441">
+    <test started-at="2025-07-11T17:56:16 IST" name="Default test" finished-at="2025-07-11T17:57:59 IST" duration-ms="102884">
       <class name="test.TC_001">
-        <test-method is-config="true" signature="reportConfig()[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:58:38 IST" name="reportConfig" finished-at="2025-07-10T14:58:38 IST" duration-ms="216" status="PASS">
+        <test-method is-config="true" signature="reportConfig()[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:56:16 IST" name="reportConfig" finished-at="2025-07-11T17:56:16 IST" duration-ms="184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportConfig -->
-        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:58:38 IST" name="launchBrowser" finished-at="2025-07-10T14:58:44 IST" duration-ms="5874" status="PASS">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:56:16 IST" name="launchBrowser" finished-at="2025-07-11T17:56:20 IST" duration-ms="4337" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,23 +22,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:58:44 IST" name="setupPages" finished-at="2025-07-10T14:58:44 IST" duration-ms="67" status="PASS">
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:56:20 IST" name="setupPages" finished-at="2025-07-11T17:56:21 IST" duration-ms="89" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupPages -->
-        <test-method signature="play()[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:58:44 IST" name="play" finished-at="2025-07-10T14:59:31 IST" duration-ms="47721" status="PASS">
+        <test-method signature="play()[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:56:21 IST" name="play" finished-at="2025-07-11T17:57:56 IST" duration-ms="95535" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- play -->
-        <test-method is-config="true" signature="performLogout()[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:59:31 IST" name="performLogout" finished-at="2025-07-10T14:59:34 IST" duration-ms="2299" status="PASS">
+        <test-method is-config="true" signature="performLogout()[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:57:56 IST" name="performLogout" finished-at="2025-07-11T17:57:59 IST" duration-ms="2376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- performLogout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:59:34 IST" name="closeBrowser" finished-at="2025-07-10T14:59:34 IST" duration-ms="442" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:57:59 IST" name="closeBrowser" finished-at="2025-07-11T17:57:59 IST" duration-ms="496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="reportBackup()[pri:0, instance:test.TC_001@815b41f]" started-at="2025-07-10T14:59:34 IST" name="reportBackup" finished-at="2025-07-10T14:59:35 IST" duration-ms="520" status="PASS">
+        <test-method is-config="true" signature="reportBackup()[pri:0, instance:test.TC_001@217ed35e]" started-at="2025-07-11T17:57:59 IST" name="reportBackup" finished-at="2025-07-11T17:57:59 IST" duration-ms="396" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportBackup -->
